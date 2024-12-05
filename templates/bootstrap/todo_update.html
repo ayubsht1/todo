@@ -1,0 +1,21 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="column">
+      <form action="" method="post">
+        {% csrf_token %}
+      <div class="mb-3">
+        <label for="title" class="form-label fs-1">Todo title</label>
+        <input type="text" name="title" class="form-control" id="title" placeholder="add your title" value="{{todo.title}}"/>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label fs-1">Todo description</label>
+        <textarea name="decription" id="decription" class="form-control">{{todo.decription}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+    </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
